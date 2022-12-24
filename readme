@@ -1,1 +1,13 @@
+#устанавливаем все в laravel.local
 
+npm i laravel-mix - установка компилятора (если не работает, то npm install laravel-mix --save-dev)
+npm i uikit - библиотека для подключения js файлов
+для компиляции css установить npm install postcss-custom-properties --save-dev
+
+
+в laravel.local создаем webpack.mix.js:
+const mix = require('laravel-mix'); //иницилизация
+
+mix.postCss('resourses/css/main.css', 'public/css') // КОМПИЛИЦИЯ CSS файлов
+    .js('resourses/js/app.js') // компилиция js ФАЙЛОВ
+    .js('resourses/js/main.js').version();
